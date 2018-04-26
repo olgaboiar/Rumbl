@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+    <h3> <%= post.title %> </h3>
+    <h5> <%= post.subtitle %> </h5>
+    <img src="<%=post.picture %>">
+    <article> <%= post.postbody %> </article>
+    <p> By <%= post.user_id %> </p>
+ <% end %>

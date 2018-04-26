@@ -28,3 +28,8 @@ get '/profile' do
     @user = User.find(session[:id])
     erb :profile
 end
+
+get '/posts' do 
+    @posts = Post.all
+    erb :postgrid
+end
