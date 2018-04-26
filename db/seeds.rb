@@ -1,0 +1,22 @@
+User.create(first_name: "Ron", last_name: "Snow", screen_name: "viking", email: "ronsnow@gmail.com", userpic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa4e2VF6cfou9oL0cc5OAzVTEbmAgFjIW2r-7lTkpOljG9k38N", birthday: "1981-03-21", password: "123asd")
+User.create(first_name: "Bill", last_name: "Ice", screen_name: "icebraker", email: "icebraker@gmail.com", userpic: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_March_2010-1.jpg", birthday: "1971-03-21", password: "123asd123")
+User.create(first_name: "Sam", last_name: "Rain", screen_name: "glacierman", email: "glacierman@gmail.com", userpic: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Smiling_Dog_Face.jpg", birthday: "1991-03-21", password: "asd123")
+
+Tag.create(tag: "glacier")
+Tag.create(tag: "camping")
+Tag.create(tag: "reykjavik")
+Tag.create(tag: "waterfall")
+Tag.create(tag: "lavafield")
+Tag.create(tag: "marathon")
+Tag.create(tag: "hotsprings")
+Tag.create(tag: "volcano")
+Tag.create(tag: "puffin")
+Tag.create(tag: "hike")
+
+Post.create(title: "Top 5 Puffin Spots in Iceland", subtitle: "Find out when to see and how to find these adorable funny birds while traveling in Iceland!", picture: "https://images.unsplash.com/photo-1464550838636-1a3496df938b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f22dbf6c13ea7c21e803aa721437b691&auto=format&fit=crop&w=1188&q=80", postbody: "Lorem ipsum dolor amet salvia freegan authentic mustache, palo santo pork belly trust fund food truck chia plaid post-ironic snackwave. Adaptogen thundercats narwhal humblebrag kickstarter sriracha enamel pin quinoa raclette biodiesel readymade 3 wolf moon plaid paleo. Chartreuse hoodie coloring book thundercats cray. Banjo hot chicken YOLO chillwave. Adaptogen beard seitan asymmetrical pok pok occupy woke trust fund XOXO typewriter. Listicle tote bag PBR&B retro kombucha squid green juice.", user_id: 1, time_created: "2018-01-21 13:33:33")
+Post.create(title: "Seljalandsfoss", subtitle: "A beautiful waterfall that you can walk behind (in summer)", picture: "https://images.unsplash.com/photo-1467048206339-21d11f496fd1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=986c6d6632917d6b635cb8fbeb1a6449&auto=format&fit=crop&w=1050&q=80", postbody: "Lorem ipsum dolor amet salvia freegan authentic mustache, palo santo pork belly trust fund food truck chia plaid post-ironic snackwave. Adaptogen thundercats narwhal humblebrag kickstarter sriracha enamel pin quinoa raclette biodiesel readymade 3 wolf moon plaid paleo. Chartreuse hoodie coloring book thundercats cray. Banjo hot chicken YOLO chillwave. Adaptogen beard seitan asymmetrical pok pok occupy woke trust fund XOXO typewriter. Listicle tote bag PBR&B retro kombucha squid green juice.", user_id: 2, time_created: "2017-01-21 13:33:33")
+
+PostTag.create(post_id: 1, tag_id: 2)
+PostTag.create(post_id: 1, tag_id: 9)
+PostTag.create(post_id: 2, tag_id: 2)
+PostTag.create(post_id: 2, tag_id: 4)
