@@ -16,10 +16,22 @@ get '/signup' do
     erb :'/signup'
 end
 
+get '/login' do
+    erb :'/login'
+end
+
+post '/user/login' do 
+    @user = User.find_by(email: params[:email], password: params[:password])
+    if @user != nil
+        session[:id] = @user.id
+        erb :profile
+    else
+        redirect '/signup'
+    end 
+end
+
 post '/user/new' do 
     @newuser = User.create(first_name: params[:first_name], last_name: params[:last_name],screen_name: params[:screen_name], email: params[:email], userpic: params[:userpic], birthday: params[:birthday], password: params[:password])
-    #Setting the session with key of ID to be equal to the users id
-    #Essentialy this "Logs them in"
     session[:id] = @newuser.id
     redirect '/profile'
 end
