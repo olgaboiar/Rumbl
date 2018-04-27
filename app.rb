@@ -41,6 +41,16 @@ get '/profile' do
     erb :profile
 end
 
+get '/post/new' do
+    erb :new_post
+end
+
+post '/post/save' do 
+    @author = session[:id]
+    @newpost = Post.create(title: params[:title], subtitle: params[:subtitle], picture: params[:picture], postbody: params[:postbody], user_id: @author, time_created: Time.now)
+    redirect '/posts'
+end
+
 get '/posts' do 
     @posts = Post.all
     erb :postgrid
