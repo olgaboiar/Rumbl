@@ -41,6 +41,27 @@ get '/profile' do
     erb :profile
 end
 
+get '/profile/edit' do 
+    @user = User.find(session[:id])
+    erb :editprofile
+end
+
+put '/profile/edit' do
+    @user = User.find(session[:id])
+    @user.update(first_name: params[:first_name], last_name: params[:last_name],screen_name: params[:screen_name], email: params[:email], userpic: params[:userpic], birthday: params[:birthday], password: params[:password])
+    redirect '/profile'
+end
+
+get '/profile/delete' do 
+    erb :deleteprofile
+end
+
+delete '/profile/delete' do
+    @user = User.find(session[:id])
+    @user.destroy
+    redirect '/posts'
+end
+
 get '/post/new' do
     erb :new_post
 end
