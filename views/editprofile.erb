@@ -1,0 +1,13 @@
+<form action="/profile/edit" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="first_name" placeholder="<%= @user.first_name %>">
+  <input type="text" name="last_name" placeholder="l<%= @user.last_name %>">
+  <input type="text" name="screen_name" placeholder="<%= @user.screen_name %>">
+  <input type="date" name="birthday" placeholder="<%= @user.birthday %>">
+  <input type="text" name="userpic" placeholder="<%= @user.userpic %>">
+  <input type="email" name="email" placeholder="<%= @user.email %>">
+  <input type="password" name="password" placeholder="<%= @user.password %>">
+  <button type="submit" style="width:100px;height:100px">
+</form>
+
+<form method="POST" action="/user/new">
