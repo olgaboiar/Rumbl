@@ -1,0 +1,12 @@
+.header nav{
+    background-image: linear-gradient(to bottom, rgba(100,100,113,0.5), rgba(178,146,113,0.5)), url("/images/image1.jpg");
+    height: 10vh; 
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#blog-name{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 40px;
+}

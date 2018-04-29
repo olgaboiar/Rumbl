@@ -102,3 +102,8 @@ get '/posts/:username' do
     @posts = @user.posts
     erb :postgrid
 end
+
+get '/post/:id' do
+    @post = Post.find(params[:id])
+    erb :post
+end

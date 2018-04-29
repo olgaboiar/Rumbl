@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="post.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Neuton" rel="stylesheet">
+    <title>Ice Spice</title>
+</head>
+<body>
+<div class="header">
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center" id="blog-name">Ice Spice</a>         
+        </div>
+    </nav>
+</div>           
+    <div class="container">
+        
+    </div>
+    <div class="container">
+        <h3> <%= @post.title %> </h3>
+        <h5> <%= @post.subtitle %> </h5>
+        <img src="<%= @post.picture %>">
+        <article> <%= @post.postbody %> </article>
+        <p> By <%= @post.user_id %> </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
