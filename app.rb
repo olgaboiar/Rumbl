@@ -12,14 +12,6 @@ get '/' do
     erb :index
 end
 
-get '/signup' do
-    erb :'/signup'
-end
-
-get '/login' do
-    erb :'/login'
-end
-
 post '/user/login' do 
     @user = User.find_by(email: params[:email], password: params[:password])
     if @user != nil

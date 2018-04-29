@@ -10,3 +10,11 @@ body {
     font-family: 'Abril Fatface', cursive;
     font-size: 70px;
 }
+
+.hidden {
+    display: none;
+}
+
+.show-it {
+    display: block;
+}
