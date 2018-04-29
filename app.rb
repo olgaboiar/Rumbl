@@ -31,7 +31,14 @@ post '/user/login' do
 end
 
 post '/user/new' do 
-    @newuser = User.create(first_name: params[:first_name], last_name: params[:last_name],screen_name: params[:screen_name], email: params[:email], userpic: params[:userpic], birthday: params[:birthday], password: params[:password])
+    @newuser = User.create(
+        first_name: params[:first_name],
+        last_name: params[:last_name],
+        screen_name: params[:screen_name],
+        email: params[:email],
+        userpic: params[:userpic],
+        birthday: params[:birthday],
+        password: params[:password])
     session[:id] = @newuser.id
     redirect '/profile'
 end
@@ -48,7 +55,14 @@ end
 
 put '/profile/edit' do
     @user = User.find(session[:id])
-    @user.update(first_name: params[:first_name], last_name: params[:last_name],screen_name: params[:screen_name], email: params[:email], userpic: params[:userpic], birthday: params[:birthday], password: params[:password])
+    @user.update(
+        first_name: params[:first_name],
+        last_name: params[:last_name],
+        screen_name: params[:screen_name],
+        email: params[:email],
+        userpic: params[:userpic],
+        birthday: params[:birthday],
+        password: params[:password])
     redirect '/profile'
 end
 
@@ -72,7 +86,19 @@ post '/post/save' do
     redirect '/posts'
 end
 
+get '/myposts' do
+    @user = User.find(session[:id])
+    @posts = @user.posts
+    erb :postgrid
+end
+
 get '/posts' do 
     @posts = Post.all
+    erb :postgrid
+end
+
+get '/posts/:username' do
+    @user = User.find_by_screen_name(params[:username])
+    @posts = @user.posts
     erb :postgrid
 end
