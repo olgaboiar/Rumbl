@@ -8,7 +8,6 @@ body {
 
 #blog-title {
     font-family: 'Abril Fatface', cursive;
-    font-size: 70px;
 }
 
 .hidden {
@@ -17,4 +16,12 @@ body {
 
 .show-it {
     display: block;
+}
+
+#blog-menu a {
+    background-color: gray;
+}
+
+#blog-info {
+    margin-top: 18%;
 }

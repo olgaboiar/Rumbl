@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Neuton" rel="stylesheet">
+    <title>Ice Spice</title>
+</head>
+<body>
+    <div class="container center" id="blog-info">
+        <div class="row" id="blog-title"><h1>Ice Spice Blog</h1></div>
+        <div class="row" id="blog-subtitle"><h5>a place to share your ideas about traveling to Iceland</h5></div>
+        <div class="row" id="blog-menu">
+            <div class="col s12 m4"><a class="waves-effect waves-light btn modal-trigger" href="#signup" id="signup-link">Sign Up</a></div>
+            <div class="col s12 m4"><a class="waves-effect waves-light btn modal-trigger" href="#login" id="login-link">Log In</a></div>
+            <div class="col s12 m4"><a class="waves-effect waves-light btn" href="/posts">Read</a></div>
+        </div>
+    </div>
+
+    <div id="main">
+        <%= yield %>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>

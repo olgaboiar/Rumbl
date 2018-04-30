@@ -1,3 +1,5 @@
+<div class="container">
+<h4>You can edit your profile here</h4>
 <form action="/profile/edit" method="POST">
   <input type="hidden" name="_method" value="PUT">
   <input type="text" name="first_name" placeholder="<%= @user.first_name %>">
@@ -7,7 +9,6 @@
   <input type="text" name="userpic" placeholder="<%= @user.userpic %>">
   <input type="email" name="email" placeholder="<%= @user.email %>">
   <input type="password" name="password" placeholder="<%= @user.password %>">
-  <button type="submit" style="width:100px;height:100px">
+  <button class="btn waves-effect waves-light grey" type="submit">Submit</button>
 </form>
-
-<form method="POST" action="/user/new">
+</div>
