@@ -8,17 +8,21 @@ require_relative './models/postTag'
 set :database, {adapter: 'postgresql', database: 'icelandblog'}
 enable :sessions
 
+def logged_in?
+    !session[:id].nil?
+end
+
 get '/' do
-    erb :index
+    erb :index, :layout => :indexlayout
 end
 
 post '/user/login' do 
     @user = User.find_by(email: params[:email], password: params[:password])
     if @user != nil
         session[:id] = @user.id
-        erb :profile
+        erb :profile, :layout => :layout
     else
-        redirect '/signup'
+        redirect '/'
     end 
 end
 
@@ -37,12 +41,12 @@ end
 
 get '/profile' do
     @user = User.find(session[:id])
-    erb :profile
+    erb :profile, :layout => :layout
 end
 
 get '/profile/edit' do 
     @user = User.find(session[:id])
-    erb :editprofile
+    erb :editprofile, :layout => :layout
 end
 
 put '/profile/edit' do
@@ -59,7 +63,7 @@ put '/profile/edit' do
 end
 
 get '/profile/delete' do 
-    erb :deleteprofile
+    erb :deleteprofile, :layout => :layout
 end
 
 delete '/profile/delete' do
@@ -69,33 +73,40 @@ delete '/profile/delete' do
 end
 
 get '/post/new' do
-    erb :new_post
+    erb :new_post, :layout => :layout
 end
 
 post '/post/save' do 
     @author = session[:id]
     @newpost = Post.create(title: params[:title], subtitle: params[:subtitle], picture: params[:picture], postbody: params[:postbody], user_id: @author, time_created: Time.now)
-    redirect '/posts'
+    redirect '/myposts'
 end
 
 get '/myposts' do
     @user = User.find(session[:id])
     @posts = @user.posts
-    erb :postgrid
+    erb :postgrid, :layout => :layout
 end
 
 get '/posts' do 
     @posts = Post.all
-    erb :postgrid
+    erb :postgrid, :layout => :layout
 end
 
 get '/posts/:username' do
     @user = User.find_by_screen_name(params[:username])
     @posts = @user.posts
-    erb :postgrid
+    erb :postgrid, :layout => :layout
 end
 
 get '/post/:id' do
     @post = Post.find(params[:id])
-    erb :post
+    @author = User.find(@post.user_id)
+    @moreposts = @author.posts.limit(2)
+    erb :post, :layout => :layout
+end
+
+get '/logout' do
+    session.clear
+    redirect '/'
 end

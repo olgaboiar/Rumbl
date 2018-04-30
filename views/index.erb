@@ -1,91 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Neuton" rel="stylesheet">
-    <title>Ice Spice</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row" id="blog-title">Ice Spice</div>
-        <div class="row" id="blog-subtitle">a place to share your ideas about traveling to Iceland</div>
-        <div class="row" id="blog-menu">
-            <div class="col s12 m4"><a href="" id="signup-link">Sign Up</a></div>
-            <div class="col s12 m4"><a href="" id="login-link">Log In</a></div>
-            <div class="col s12 m4"><a href="/posts">Read</a></div>
-        </div>
 
-        <!-- Signup Form -->
-        <div class="row hidden" id="signup">
-            <div class="col s12 m6 center">
-                <div class="card pink lighten-4">
-                    <div class="card-content white-text">
-                        <span class="card-title">Create an account to be able to post in this blog!</span>
+<!-- Signup Form -->
+<div class="row modal grey lighten-2" id="signup">
+    <div class="center modal-content">
+        <div class="">
+            <div class="card-content white-text">
+                <span class="card-title">Create an account to be able to post in this blog!</span>
+                <div class="row">
+                    <form class="col s12" method="POST" action="/user/new">
                         <div class="row">
-                            <form class="col s12" method="POST" action="/user/new">
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input  id="first_name" type="text" class="validate" name="first_name">
-                                        <label for="first_name">First Name</label></div>
-                                    <div class="input-field col s6">
-                                        <input id="last_name" type="text" class="validate" name="last_name">
-                                        <label for="last_name">Last Name</label></div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input id="screen_name" type="text" class="validate" name="screen_name">
-                                        <label for="screen_name">Username</label></div>
-                                    <div class="input-field col s6">
-                                        <input id="birthday" type="text" class="datepicker" name="birthday">
-                                        <label for="birthday">Birthday</label></div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input id="email" type="email" class="validate" name="email">
-                                        <label for="email">Email</label></div>
-                                    <div class="input-field col s6">
-                                        <input id="password" type="password" class="validate" name="password">
-                                        <label for="password">Password</label></div>
-                                </div>
-                                <button class="btn waves-effect waves-light pink lighten-2" type="submit" id="submit-signup">Submit</button>
-                            </form>
+                            <div class="input-field col s6">
+                                <input  id="first_name" type="text" class="validate" name="first_name">
+                                <label for="first_name">First Name</label></div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate" name="last_name">
+                                <label for="last_name">Last Name</label></div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="screen_name" type="text" class="validate" name="screen_name">
+                                <label for="screen_name">Username</label></div>
+                            <div class="input-field col s6">
+                                <input id="birthday" type="text" class="datepicker" name="birthday">
+                                <label for="birthday">Birthday</label></div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate" name="email">
+                                <label for="email">Email</label></div>
+                            <div class="input-field col s6">
+                                <input id="password" type="password" class="validate" name="password">
+                                <label for="password">Password</label></div>
+                        </div>
+                        <button class="btn waves-effect waves-light grey" type="submit" id="submit-signup">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <!-- Login Form -->
-        <div class="row hidden" id="login">
-            <div class="col s12 m6 center">
-                <div class="card pink lighten-4">
-                    <div class="card-content white-text">
-                        <span class="card-title">Log into your account to be able to post!</span>
-                        <div class="row">
-                            <form class="col s12" method="POST" action="/user/login">
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input id="email" type="email" class="validate" name="email">
-                                        <label for="email">Email</label></div>
-                                    <div class="input-field col s6">
-                                        <input id="password" type="password" class="validate" name="password">
-                                        <label for="password">Password</label></div>
-                                </div>
-                                <button class="btn waves-effect waves-light pink lighten-2" type="submit" id="submit-login">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-</body>
-</html>
+</div>
+
+<!-- Login Form -->
+<div class="row modal grey lighten-2" id="login">
+    <div class="modal-content center">
+        <div class="">
+            <div class="card-content white-text">
+                <span class="card-title">Log into your account to be able to post!</span>
+                <div class="row">
+                    <form class="col s12" method="POST" action="/user/login">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate" name="email">
+                                <label for="email">Email</label></div>
+                            <div class="input-field col s6">
+                                <input id="password" type="password" class="validate" name="password">
+                                <label for="password">Password</label></div>
+                        </div>
+                        <button class="btn waves-effect waves-light grey" type="submit" id="submit-login">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+.header nav{
+    background-image: linear-gradient(to bottom, rgba(100,100,113,0.5), rgba(178,146,113,0.5)), url("/images/image1.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#blog-name{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 40px;
+}
+
+.social-links li{
+    display: inline;
+    margin-right: 10px;
+}
+
+.card img{
+    height: 260px;
+   }
+
+#post-image {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#new-post {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.post-image {
+    background-size: cover;
+    overflow: hidden;
+    height: 0;
+    padding-top: 75%;
+    display: block;
+}
+
+#burger {
+	color: white;
+	font-size: 2rem;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.container {
+    padding-bottom: 25px;
+}
+
+#profile-image {
+    width: 100%;
+}
+
+#profile-menu a {
+    background-color: gray;
+    margin: 15px;
+}
