@@ -5,7 +5,7 @@ require_relative './models/post'
 require_relative './models/tag'
 require_relative './models/postTag'
 
-set :database, {adapter: 'postgresql', database: 'icelandblog'}
+# set :database, {adapter: 'postgresql', database: 'icelandblog'}
 enable :sessions
 
 def logged_in?
