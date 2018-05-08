@@ -68,6 +68,7 @@ end
 
 delete '/profile/delete' do
     @user = User.find(session[:id])
+    Post.where(user_id: session[:id]).destroy_all
     @user.destroy
     redirect '/posts'
 end
