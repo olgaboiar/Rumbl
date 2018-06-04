@@ -22,3 +22,9 @@ The key features of this projetc are:
 - Sinatra is used as the web microframework backend
 
 Project uploaded to Github and can be accessed at https://github.com/olgaboiar/Rumbl
+
+Deployed to Heroku: https://olgasrumbl.herokuapp.com
+
+Sample User:
+email: test@test.com
+password: 123123
